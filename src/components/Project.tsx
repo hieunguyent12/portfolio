@@ -8,10 +8,10 @@ interface Props {
 
 export default function Project({ project }: Props) {
   return (
-    <div className="flex mb-10">
+    <div className="flex flex-col sm:flex-row mb-10">
       <div
         id="project-image"
-        className="relative w-56 h-56 rounded-md bg-slate-100 border-gray-300 border"
+        className="relative w-full sm:w-56  h-60 sm:h-56 rounded-md bg-slate-100 border-gray-300 border"
       >
         {project.imagePath !== "" && (
           <Image
@@ -20,12 +20,11 @@ export default function Project({ project }: Props) {
             layout="fill"
             objectFit="cover"
             className="rounded-md"
-            objectPosition={"-45px -2px"}
           />
         )}
       </div>
 
-      <div id="project-summary" className="pl-7 flex flex-col">
+      <div id="project-summary" className="mt-2 sm:mt-0 sm:pl-7 flex flex-col">
         <p className="text-xl font-semibold">{project.name}</p>
 
         <div className="flex">
@@ -38,7 +37,7 @@ export default function Project({ project }: Props) {
 
         <p className="mt-4">{project.description}</p>
 
-        <div className="flex items-center mt-auto">
+        <div className="flex items-center mt-2 sm:mt-auto">
           <a
             aria-label="Github"
             target="_blank"
